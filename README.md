@@ -29,6 +29,7 @@ araştırma yapılamaz. Aptalca soru yok.
 | [02](02-cp20-task6-bagimsiz-dogrulama/) | CP20 Task 6 teorem adayı — sayısal doğrulama + literatür | Sayısal bileşenler ve novelty kontrol edildi |
 | [03](03-cp17-zemin-kontrolu/) | CP17 zemin teoremi — carry özdeşlikleri ve K17 sabiti | Dışarıdan doğrulanabilir iddialar tutuyor |
 | [04](04-cp20-task6-denetim/) | CP20 Task 6 — bağımsız zero-trust denetim | `PROOF VALID WITH WORDING REPAIR` |
+| [05](05-cp20-task7-denetim/) | CP20 Task 7 — B=4 basınç teoremi denetimi | `PROOF VALID WITH WORDING REPAIR` (kapsam) |
 
 ## İki katman
 
