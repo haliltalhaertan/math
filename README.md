@@ -26,7 +26,8 @@ araştırma yapılamaz. Aptalca soru yok.
 | # | Konu | Durum |
 |---|------|-------|
 | [01](01-collatz/) | Collatz sanısı — sayıların 1'e düşüşü | Giriş / açık soru |
-| [02](02-cp20-task6-bagimsiz-dogrulama/) | CP20 Task 6 teorem adayı — bağımsız sayısal doğrulama | Sayısal bileşenler doğrulandı, denetim açık |
+| [02](02-cp20-task6-bagimsiz-dogrulama/) | CP20 Task 6 teorem adayı — sayısal doğrulama + literatür | Sayısal bileşenler ve novelty kontrol edildi |
+| [03](03-cp17-zemin-kontrolu/) | CP17 zemin teoremi — carry özdeşlikleri ve K17 sabiti | Dışarıdan doğrulanabilir iddialar tutuyor |
 
 ## İki katman
 
