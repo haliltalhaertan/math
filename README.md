@@ -25,7 +25,20 @@ araştırma yapılamaz. Aptalca soru yok.
 
 | # | Konu | Durum |
 |---|------|-------|
-| [01](01-collatz/) | Collatz sanısı — sayıların 1'e düşüşü | Açık soru, kimse çözemedi |
+| [01](01-collatz/) | Collatz sanısı — sayıların 1'e düşüşü | Giriş / açık soru |
+| [02](02-cp20-task6-bagimsiz-dogrulama/) | CP20 Task 6 teorem adayı — bağımsız sayısal doğrulama | Sayısal bileşenler doğrulandı, denetim açık |
+
+## İki katman
+
+Bu defterde iki farklı seviye var ve karışmamaları önemli:
+
+- **01** — sıfırdan giriş. Collatz nedir, neden zor, elle takip edilebilir örnekler.
+- **02** — Google Drive'daki CP01–CP20 araştırma arşivinin aktif cephesine
+  yapılan bağımsız kontrol. Bu seviye teknik ve arşivin kendi
+  denetim disiplinine tabi.
+
+Arşivin STOP kuralı yürürlükte: CP20 Task 6 teoremi bağımsız denetimden
+geçmeden downstream kullanılmamalı.
 
 ## Deneyleri çalıştırmak
 
