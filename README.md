@@ -28,6 +28,7 @@ araştırma yapılamaz. Aptalca soru yok.
 | [01](01-collatz/) | Collatz sanısı — sayıların 1'e düşüşü | Giriş / açık soru |
 | [02](02-cp20-task6-bagimsiz-dogrulama/) | CP20 Task 6 teorem adayı — sayısal doğrulama + literatür | Sayısal bileşenler ve novelty kontrol edildi |
 | [03](03-cp17-zemin-kontrolu/) | CP17 zemin teoremi — carry özdeşlikleri ve K17 sabiti | Dışarıdan doğrulanabilir iddialar tutuyor |
+| [04](04-cp20-task6-denetim/) | CP20 Task 6 — bağımsız zero-trust denetim | `PROOF VALID WITH WORDING REPAIR` |
 
 ## İki katman
 
@@ -38,8 +39,8 @@ Bu defterde iki farklı seviye var ve karışmamaları önemli:
   yapılan bağımsız kontrol. Bu seviye teknik ve arşivin kendi
   denetim disiplinine tabi.
 
-Arşivin STOP kuralı yürürlükte: CP20 Task 6 teoremi bağımsız denetimden
-geçmeden downstream kullanılmamalı.
+CP20 Task 6 denetimi tamamlandı (04): ana teorem geçerli, controller'ın
+sınırlı-takip lemmasında bir ifade onarımı gerekiyor.
 
 ## Deneyleri çalıştırmak
 
