@@ -183,3 +183,117 @@ açılmadı; master checkpoint özetlerinden ve hedefli aramadan gidildi.
 Özellikle CP19 T3 ve CP19 T5 ayrı inceleme hak ediyor.
 
 Ve her zamanki uyarı: bu da bir AI taraması.
+
+---
+
+# EK — Taramanın tamamlanması (aynı gün)
+
+İlk raporda "doğrulanmadı" diye bırakılan iki madde kapatıldı:
+CP19 Task 5 ve CP19 Task 3.
+
+## Bulgu 4 — CP19 T5'in survivor'ı zero-critical DEĞİL
+
+`CP19_TASK5_FINDINGS.md` explicit survivor'ı şöyle tanımlıyor:
+
+```
+kappa = 53/50 = 1.06 > kappa_*
+turnover density: 0.999855041504
+maximum zero-defect run: 1
+```
+
+**"zero-defect" = `d_i = 0` = `a_i = g_i` = kritik site.**
+
+Yani survivor kritik siteler içeriyor (izole, ardışık değil). Bu,
+Task 6/7'nin `(H4) a_k ≠ g_k ∀k` hipotezini **ihlal ediyor**.
+
+> **Task 6/7 bu survivor'ı doğrudan dışlamıyor.**
+
+Bu, ilk raporun 3. önerisine verilen cevaptır: CP20 T3'ün "20-block
+controller"ı ile CP19 T5'in survivor'ı **aynı nesne değil**. T3'ünki
+zero-critical ("no critical sites" diye yazıyor), T5'inki değil.
+
+## Bulgu 5 — Basınç yöntemi seyrek kritik sitelere genişletiliyor
+
+Kritik site yoğunluğu `ε` ise, ikinci bir Chernoff kısıtı eklenebilir:
+
+```
+h(eps) = inf_{lambda, nu<=0} [
+     (2-alpha) log2( 2^nu + A(lambda) )
+   + (alpha-1) log2( 2^nu + B(lambda) )
+   - nu * eps ]
+```
+
+`nu -> -inf` zero-critical limitini, `nu = 0` kritik sitelerin serbest
+halini verir. İki yöntemle hesaplandı:
+
+| `eps` | `h` (titiz, iki-Lagrange) | eşik | `h` (kaba karışım) | eşik |
+|---|---|---|---|---|
+| 1e−5 | 0,56949758 | 2,7830891 | 0,56948384 | 2,7831562 |
+| **0,00014496** | **0,57148321** | **2,7734192** | 0,57128412 | 2,7743857 |
+| 1e−3 | 0,58151745 | 2,7255631 | 0,58014746 | 2,7319994 |
+| 0,01 | 0,65775604 | 2,4096510 | 0,64440906 | 2,4595596 |
+| 0,05 | 0,88688050 | 1,7871207 | 0,82724052 | 1,9159633 |
+
+Titiz sınır kaba karışım modelinden biraz yüksek (yani kaba model
+iyimserdi), ama fark küçük.
+
+### T5 survivor testi
+
+```
+eps  = 1 − 0,999855041504 = 0,0001449585
+h    = 0,571483211914      (lambda* = 1,596217 , nu* = −13,55537)
+esik : kappa >= 2,77341917956
+survivor kappa = 1,06
+```
+
+`1,06 ≪ 2,773` → **survivor dışlanır**, eğer genişletme geçerliyse.
+
+> ⚠️ **Bu genişletme benim taslağım, denetlenmedi.** Kritik sitelerin
+> Sturmian faz yapısıyla etkileşimi tam modellenmedi; T5 survivor'ı
+> yalnızca `(κ, ε)` çiftiyle test edildi, oysa tanımında başka
+> özellikler de var (mean-2 pencereler, turnover profili, dyadic
+> yerleştirme). Bu bir **hipotez**, sonuç değil.
+
+## Bulgu 6 — CP19 T3 tamamlayıcı, çakışmıyor
+
+`CP19_TASK3_SPARSE_CRITICAL_THEOREM.md` şunu veriyor:
+
+```
+kritik uzunluk r >= 16 olan her segment icin
+n_u >= r^{1+log2 3} / (24 log2 r) - 2r/3
+```
+
+Yani **uzun kritik segmentler** yüksek durum zorluyor ve
+`δ(1+α) > κ` olduğunda imkansız hale geliyor.
+
+Bu, Task 6/7'nin tam tersi ucu kapatıyor. Basınç yöntemi buraya
+uygulanmıyor — farklı mekanizma.
+
+## Kritik-site ekseninde frontier haritası
+
+| Kritik site rejimi | Kapatan | Durum |
+|---|---|---|
+| Hiç yok (zero-critical) | Task 6 + 7 + güçlendirme | `κ < 2,784` kapalı |
+| Seyrek, izole (`ε` küçük) | *bu genişletme* | `κ < ~2,77` — **taslak** |
+| Uzun segmentler (`r ≥ 16`) | CP19 T3 | `δ(1+α) > κ` kapalı |
+| Orta yoğunluk (`ε ≳ 0,05`) | — | **açık** |
+
+`ε` büyüdükçe eşik düşüyor: `ε = 0,05`'te 1,787, `ε = 0,1`'de ~1,6.
+Yani yöntem yoğun kritik sitelerde zayıflıyor.
+
+## Güncellenmiş öneriler
+
+1. ~~CP19 T5'in survivor'ını kontrol et~~ → **yapıldı**: zero-critical
+   değil, Task 6/7 doğrudan uygulanmıyor.
+2. **Seyrek-kritik genişletmesi ayrı bir Task olarak ele alınmalı.**
+   Doğruysa CP19 T5'in `[FAIL]` gerekçesini de düşürür — ama önce
+   Sturmian faz etkileşimi titizce modellenmeli.
+3. Orta yoğunluklu kritik site rejimi (`ε ≈ 0,01–0,1`) hiçbir teorem
+   tarafından kapatılmıyor; bu, frontier'ın gerçek yeri olabilir.
+
+## Tarama artık tam
+
+CP17, CP18 (bariyer, T5/T6/T10), CP19 (T3, T4, T5, T10), CP20 (T1–T7)
+tarandı. Kalan: CP18 T1–T4, T7–T9 (hepsi `[FAIL]`/`[REDUNDANT]`, entropi
+sınırı taşımıyorlar) ve CP19 T1/T2/T6–T9 (`[LEAD]`/`[FAIL]`, sembolik
+sayım argümanı yok).
