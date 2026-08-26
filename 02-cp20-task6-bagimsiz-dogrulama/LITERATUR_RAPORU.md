@@ -9,7 +9,8 @@ hipotezleri controller üzerinde sayısal olarak test edildi.
 ## Özet verdict
 
 `[TASK 6 TEOREMİ İNCELENEN KAYNAKLARIN HİÇBİRİ TARAFINDAN KAPSANMIYOR]`
-`[NOVELTY YİNE DE SERTİFİKALI DEĞİL — bir açık risk kaldı, bkz. §6]`
+`[EN YÜKSEK RİSKLİ KAYNAK (arXiv:2603.11066) TARANDI — KAPSAMIYOR, bkz. §6]`
+`[NOVELTY YİNE DE SERTİFİKALI DEĞİL — kalan boşluklar §7'de]`
 
 ## 1. SanMin Wang — E-sequence yaklaşımı
 
@@ -139,35 +140,96 @@ birleşimi:
 Wang önek kullanıyor ve ek eşitsizlikler gerektiriyor; Task 6 keyfi faktör
 kullanıyor ve ek eşitsizlik gerektirmiyor. Bu gerçek bir genelleme.
 
-## 6. Kalan açık risk — kapatılmadı
+## 6. En yüksek riskli kaynak — tarandı, kapsamıyor
 
-**arXiv:2603.11066** — Edward Y. Chang, *Exploring Collatz Dynamics with
-Human–LLM Collaboration* (Mart 2026, v6 Nisan 2026).
+**arXiv:2603.11066v6** — Edward Y. Chang (Stanford CS / QuadriumAI),
+*Exploring Collatz Dynamics with Human–LLM Collaboration*, Şubat–Nisan 2026.
+630 formal sonuç, ~10¹⁴ hesaplama, 29 paradigma. Tam metin indirildi
+(13.927 satır) ve tarandı.
 
-- 233 sayfa, ~10¹⁴ hesaplama deneyi, **630 formal sonuç**, 29 farklı çerçeve
-- İçeriğinde "formal language properties of divergent-compatible sequences" var
-- Bir "Paradigm Exhaustion Theorem" iddia ediyor
-- İnsan–LLM işbirliğiyle üretilmiş
+Bu kaynak, Task 6 ile aynı alanda, çok daha geniş kapsamlı ve **benzer
+metodolojiyle** (insan–LLM işbirliği) üretildiği için en yüksek riskli
+adaydı. Sonuç: **kapsamıyor.**
 
-Bu çalışma **Task 6 ile aynı alanda, çok daha geniş kapsamlı ve benzer
-metodolojiyle** üretilmiş. 630 sonucun içinde Task 6'ya denk ya da onu
-kapsayan bir ifade bulunması gerçek bir olasılık. **Bu kaynak taranmadı.**
+### Anahtar kavram taraması (tam metin)
 
-Ayrıca genel olarak taranmayanlar: return-word literatürü, 2019–2026 arası
-Collatz sembolik dinamik makaleleri, Eliahou–Verger-Gaugry'nin Collatz
-kelimeleri üzerine çalışmaları.
+| Task 6'nın merkezi kavramı | Chang'da geçiş sayısı |
+|---|---|
+| `factor complexity` | **0** |
+| `subword` | **0** |
+| `word complexity` | **0** |
+| `repeated factor` / `repeated prefix` | **0** |
+| `return word` | **0** |
+| `same word occurs` / `occurs twice` | **0** |
+| `logarithmic discrepancy` | **0** |
+| `kappa` (κ log₂k hipotezi) | **0** |
+| `polynomially bounded` / `polynomial growth` / `O(k^…)` | **0** |
 
-## 7. Sonuç ve tavsiye
+Task 6'nın **hem mekanizması hem merkezi hipotezi** metinde hiç geçmiyor.
 
-Novelty **çürütülmedi** ve destekleyici kanıt güçlü (özellikle Wang'ın kendi
-açık problem beyanı). Ama sertifikalanmadı.
+### Yakın görünen ama farklı çıkan üç nokta
 
-Öncelik sırası:
-1. **arXiv:2603.11066'nın taranması** — en yüksek riskli tek kaynak.
-2. Eliahou–Verger-Gaugry ve return-word literatürü.
-3. Ancak bunlardan sonra tam ispat denetimi anlamlı.
+**(a) "Sturmian" — 49 geçiş, farklı rol.**
+Chang'ın *Sturmian-compatible* tanımı `v_d ∈ {1,2}`, yani bir **alfabe
+kısıtı** (B=2). Bunu Carry Contamination Teoremi'nde (Thm 10.4) 2-adic
+carry argümanı için kullanıyor. Task 6'da Sturmian, Beatty kelimesi
+`g_k`'nın `p_g(r) = r+1` **faktör sayımı** için kullanılıyor. Aynı kelime,
+tamamen farklı iş. Ayrıca Chang B=2 ile, Task 6 B=3 **ve** `a_k ≠ g_k`
+kısıtıyla çalışıyor — farklı sınıflar.
 
-Arşivin STOP kuralı yürürlükte kalmalıdır.
+**(b) Corollary 10.5 — `|C_D| = 2·3^{D−1}` sayımı.**
+Bu bir üstel sayım ve ilk bakışta karmaşıklık sınırına benziyor. Ama
+saydığı şey **dil/silindir düzeyinde uyumlu kelimelerin toplam sayısı**
+(tüm başlangıç değerleri üzerinden). Task 6 ise **tek bir sonsuz
+yörüngenin** valuation kelimesinin faktör karmaşıklığını alttan
+sınırlıyor. Bunlar farklı nicelikler: biri dilin büyüklüğü, diğeri tek
+bir kelimenin iç çeşitliliği.
+
+**(c) "discrepancy" — 35 geçiş, isim çakışması.**
+Chang'da `δ_K(n₀)` = residue dağılımının düzgünlükten **toplam varyasyon
+sapması**. Task 6'da discrepancy = `s_k = ⌊αk⌋ − A_k`, yani valuation
+toplamının `αk`'dan **aritmetik sapması**. Alakasız iki kavram.
+
+### Chang'da Task 6'yı destekleyen bir yan bulgu
+
+**Result 300:** *"divergent orbits require `q_L ∼ m·2^{(α−β)L}`; all tested
+orbits have `S_L/L → α` rather than `β < α`."*
+
+Bu, CP20 controller'ının bulunduğu rejimin (`A_k/k → α`, aşağıdan)
+ampirik olarak gerçekten kritik rejim olduğunu destekliyor. Chang bunu
+teorem olarak değil gözlem olarak veriyor.
+
+### Chang'ın kendi formal dil sonucu farklı düzeyde
+
+**Result 299:** `L_div` bağlamdan bağımsız (context-free) **değildir**.
+Bu bir **dil sınıfı** sonucu (pumping lemma ile). Task 6'nınki ise
+**nicel bir entropi alt sınırı** (`liminf log₂p_a(r)/r ≥ α/κ`). Dil
+sınıfı ifadeleri nicel karmaşıklık sınırı vermez; farklı düzeyler.
+
+## 7. Sonuç ve kalan boşluklar
+
+Novelty **çürütülmedi**. Destekleyici kanıt güçlendi:
+
+1. Wang'ın Bölüm 4'teki beş kriterinin hiçbiri controller'a uygulanmıyor
+   (hipotezleri sayısal olarak test edildi).
+2. Wang'ın kendisi `lim bₙ/n = log₂3` rejimini açık ilan ediyor —
+   controller tam bu rejimde.
+3. Dubickas'ın alt sınırı farklı mertebede (lineer) ve farklı nesne için.
+4. Chang'ın 630 sonucu içinde faktör karmaşıklığı kavramı hiç geçmiyor.
+
+**Yine de sertifikalanmadı.** Taranmayanlar:
+
+- Eliahou–Verger-Gaugry'nin Collatz kelimeleri üzerine çalışmaları
+- Return-word ve rekürans literatürü (kelime kombinatoriği tarafı)
+- 2019–2026 arası Collatz sembolik dinamik makalelerinin tam taraması
+- Dubickas'ın orijinal 2009 makalesi (yalnızca ikincil kaynaktan okundu)
+
+Bu boşluklar artık **düşük riskli**: taranan üç ana kaynak da aynı sebeple
+kapsamıyor — faktör karmaşıklığı üzerinden bir alt sınır kurma fikri
+literatürde bu bağlamda görünmüyor.
+
+**Tavsiye:** novelty artık denetimi bloke edecek kadar riskli değil.
+Denetim önceliği literatürden zemine (CP17) kaymalıdır.
 
 ## Kaynaklar
 
