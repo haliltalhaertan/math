@@ -31,6 +31,7 @@ araştırma yapılamaz. Aptalca soru yok.
 | [04](04-cp20-task6-denetim/) | CP20 Task 6 — bağımsız zero-trust denetim | `PROOF VALID WITH WORDING REPAIR` |
 | [05](05-cp20-task7-denetim/) | CP20 Task 7 — B=4 basınç teoremi denetimi | `PROOF VALID WITH WORDING REPAIR` (kapsam) |
 | [06](06-task6-guclendirme/) | Task 6'nın B=3 sonucunun güçlendirilmesi | Denetlenmemiş aday: κ ≥ 1,585 → κ ≥ 3,028 |
+| [07](07-geriye-donuk-tarama/) | Geriye dönük tarama — eski sonuçlara yeni yöntem | Frontier κ ≥ 1,053 → κ ≥ 2,784 |
 
 ## İki katman
 
