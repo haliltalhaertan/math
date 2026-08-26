@@ -30,6 +30,7 @@ araştırma yapılamaz. Aptalca soru yok.
 | [03](03-cp17-zemin-kontrolu/) | CP17 zemin teoremi — carry özdeşlikleri ve K17 sabiti | Dışarıdan doğrulanabilir iddialar tutuyor |
 | [04](04-cp20-task6-denetim/) | CP20 Task 6 — bağımsız zero-trust denetim | `PROOF VALID WITH WORDING REPAIR` |
 | [05](05-cp20-task7-denetim/) | CP20 Task 7 — B=4 basınç teoremi denetimi | `PROOF VALID WITH WORDING REPAIR` (kapsam) |
+| [06](06-task6-guclendirme/) | Task 6'nın B=3 sonucunun güçlendirilmesi | Denetlenmemiş aday: κ ≥ 1,585 → κ ≥ 3,028 |
 
 ## İki katman
 
