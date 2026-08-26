@@ -32,6 +32,7 @@ araştırma yapılamaz. Aptalca soru yok.
 | [05](05-cp20-task7-denetim/) | CP20 Task 7 — B=4 basınç teoremi denetimi | `PROOF VALID WITH WORDING REPAIR` (kapsam) |
 | [06](06-task6-guclendirme/) | Task 6'nın B=3 sonucunun güçlendirilmesi | Denetlenmemiş aday: κ ≥ 1,585 → κ ≥ 3,028 |
 | [07](07-geriye-donuk-tarama/) | Geriye dönük tarama — eski sonuçlara yeni yöntem | Frontier κ ≥ 1,053 → κ ≥ 2,784; seyrek-kritik genişletme (taslak) |
+| [08](08-literatur-taramasi/) | Detaylı literatür taraması — birincil kaynaklardan | Eşdeğer teorem bulunamadı |
 
 ## İki katman
 
