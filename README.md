@@ -33,6 +33,7 @@ araştırma yapılamaz. Aptalca soru yok.
 | [06](06-task6-guclendirme/) | Task 6'nın B=3 sonucunun güçlendirilmesi | Denetlenmemiş aday: κ ≥ 1,585 → κ ≥ 3,028 |
 | [07](07-geriye-donuk-tarama/) | Geriye dönük tarama — eski sonuçlara yeni yöntem | Frontier κ ≥ 1,053 → κ ≥ 2,784; seyrek-kritik genişletme (taslak) |
 | [08](08-literatur-taramasi/) | Detaylı literatür taraması — birincil kaynaklardan | Eşdeğer teorem bulunamadı |
+| [09](09-literaturden-baglantilar/) | Literatürden saldırı fikirleri — açık cepheye araç taşıma | 5 bağlantı, öncelikli: Hensel basamak yoğunluğu |
 
 ## İki katman
 
