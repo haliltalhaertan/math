@@ -34,6 +34,7 @@ araştırma yapılamaz. Aptalca soru yok.
 | [07](07-geriye-donuk-tarama/) | Geriye dönük tarama — eski sonuçlara yeni yöntem | Frontier κ ≥ 1,053 → κ ≥ 2,784; seyrek-kritik genişletme (taslak) |
 | [08](08-literatur-taramasi/) | Detaylı literatür taraması — birincil kaynaklardan | Eşdeğer teorem bulunamadı |
 | [09](09-literaturden-baglantilar/) | Literatürden saldırı fikirleri — açık cepheye araç taşıma | 5 bağlantı, öncelikli: Hensel basamak yoğunluğu |
+| [11](11-surekli-kesir-denetim/) | Sürekli kesir bulgusunun kendi denetimi | `[VALID AS OBSERVATION — ONE LEMMA MISSING]` |
 
 ## Güncel durum
 
