@@ -36,6 +36,7 @@ araştırma yapılamaz. Aptalca soru yok.
 | [09](09-literaturden-baglantilar/) | Literatürden saldırı fikirleri — açık cepheye araç taşıma | 5 bağlantı, öncelikli: Hensel basamak yoğunluğu |
 | [11](11-surekli-kesir-denetim/) | Sürekli kesir bulgusunun kendi denetimi | `[VALID AS OBSERVATION — ONE LEMMA MISSING]` |
 | [12](12-d0-denetim/) | CP20 Task 8B2 D0 bağımsız denetimi | `[PROOF VALID WITH WORDING REPAIR]` |
+| [13](13-d1-denetim/) | CP20 Task 8B2 D1 bağımsız denetimi | `[PROOF VALID WITH WORDING REPAIR]` + Bulgu D |
 
 ## Güncel durum
 
