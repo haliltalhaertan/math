@@ -107,7 +107,14 @@ Güçlendirilmiş eşik (`B=3`, zero-critical, kritik-log):
 `3,028 > 2` olduğundan Task 3'ün survivor aralığının **tamamı** dışarıda
 kalıyor.
 
-> **Task 3'ün `[FAIL]` kararının dayandığı nesne artık var olamaz.**
+> **Task 3'ün `[FAIL]` kararının dayandığı karşı-model artık geçersiz.**
+
+> **DÜZELTME (Drive freeze sonrası):** arşivin resmî ifadesi daha ölçülü —
+> *"CP20 Task 3's historical FAIL status is **not changed**; only its prior
+> zero-critical bounded-alphabet escape countermodel is **superseded**."*
+> Yani FAIL statüsü duruyor, yalnızca gerekçesindeki karşı-model geçersiz
+> kılındı. Benim "gerekçesi düştü, T3 yeniden değerlendirilmeli" ifadem
+> fazla iddialıydı.
 
 Bu, Task 3'ün mekanizmasının çalıştığı anlamına gelmiyor — o mekanizma
 hâlâ frontier'ı kapatmıyor. Ama **başarısızlık gerekçesi geçersiz**:
@@ -246,13 +253,33 @@ esik : kappa >= 2,77341917956
 survivor kappa = 1,06
 ```
 
-`1,06 ≪ 2,773` → **survivor dışlanır**, eğer genişletme geçerliyse.
+`1,06 ≪ 2,773` → yüzey survivor'ın yoğunluğunu yetersiz buluyor.
 
-> ⚠️ **Bu genişletme benim taslağım, denetlenmedi.** Kritik sitelerin
-> Sturmian faz yapısıyla etkileşimi tam modellenmedi; T5 survivor'ı
-> yalnızca `(κ, ε)` çiftiyle test edildi, oysa tanımında başka
-> özellikler de var (mean-2 pencereler, turnover profili, dyadic
-> yerleştirme). Bu bir **hipotez**, sonuç değil.
+> ## ⛔ DÜZELTME (2026-08-26, Drive freeze sonrası) — BU SONUÇ YANLIŞ
+>
+> **CP19 T5 survivor'ı dışlanmıyor.** Dondurulan
+> `CP20_TASK8A_FINAL_FREEZE_DECISION` şunu tespit ediyor:
+>
+> > *"CP19 Task 5's abstract survivor is **not excluded** because its
+> > logarithmic excursion cores **violate that global hypothesis**;
+> > status remains `[CP19 TASK5 SURVIVOR NOT EXCLUDED — HYPOTHESIS
+> > MISMATCH]`."*
+>
+> Survivor, `s_k = κ log₂k + O(1)` global kritik-log yasasını zaten
+> **sağlamıyor** (logaritmik excursion çekirdekleri var). Dolayısıyla
+> basınç yüzeyinin hipotezi ona uygulanmaz.
+>
+> **Hatam:** yalnızca `(κ, ρ)` çiftini karşılaştırdım, hipotez uyumunu
+> kontrol etmedim. Aşağıdaki uyarıda "tanımında başka özellikler de var"
+> demiştim ama sonucu yine de "dışlanır" diye yazdım — o adım yanlıştı.
+>
+> Yoğunluk karşılaştırmasının kendisi (0,000145 vs ~0,35) doğru; yanlış
+> olan ondan çıkardığım sonuç.
+
+> ⚠️ Ayrıca bu genişletme benim taslağımdı ve kritik sitelerin Sturmian
+> faz yapısıyla etkileşimini tam modellemiyordu. Arşivin dondurduğu V3
+> yüzeyi bu işi feasible domain `F` (`ρ₁−ρ₂ ≥ 3−2α` kısıtı dahil) ve
+> iki-rejimli uniformity lemmasıyla doğru şekilde yapıyor.
 
 ## Bulgu 6 — CP19 T3 tamamlayıcı, çakışmıyor
 

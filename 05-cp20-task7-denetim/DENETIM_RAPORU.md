@@ -61,8 +61,15 @@ aralarında **tam 1** fark. Sturmian dengelilik özelliği doğrulandı.
 
 ## Madde 3 — Chernoff işareti ve minimizasyon yönü
 
-Pozitif katsayılı üreteç: `N(r,S)·t^{−S} ≤ P(t)` her `t>0` için, dolayısıyla
-`N(r,S) ≤ P(t)·t^{S}`. Minimizasyon `λ` üzerinde ve **belirtilen yönde**.
+Pozitif katsayılı üreteç `P(t) = Σ_S N(S)t^S` için `N(S)·t^S ≤ P(t)` her
+`t>0` için, dolayısıyla **`N(S) ≤ P(t)·t^{−S}`**. Minimizasyon `λ` üzerinde
+ve belirtilen yönde.
+
+> **DÜZELTME (2026-08-26, Drive freeze sonrası):** bu raporun ilk hâlinde
+> sınır `N ≤ P(t)·t^{+S}` diye yazılmıştı — işaret hatası. Arşivin bağımsız
+> denetimi bunu *"a real sign/wording bug"* olarak tespit etti ve V3'te
+> düzeltildi. `|S| = O(log r)` olduğundan üstel entropi oranı `h_B`
+> değişmiyor; yalnızca polinom prefactor etkileniyor.
 
 Bağımsız kontrol: `f''(λ*) = 0,3646 > 0` → gerçek **minimum**, maksimum
 değil. Ters çevrilmiş bir işaret bulunamadı. `[VALID]`

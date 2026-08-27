@@ -35,6 +35,11 @@ araştırma yapılamaz. Aptalca soru yok.
 | [08](08-literatur-taramasi/) | Detaylı literatür taraması — birincil kaynaklardan | Eşdeğer teorem bulunamadı |
 | [09](09-literaturden-baglantilar/) | Literatürden saldırı fikirleri — açık cepheye araç taşıma | 5 bağlantı, öncelikli: Hensel basamak yoğunluğu |
 
+## Güncel durum
+
+**[DURUM.md](DURUM.md)** — Drive'da dondurulan teoremler, bu reponun
+katkısı, ve bağımsız denetimin bende düzelttiği üç hata.
+
 ## İki katman
 
 Bu defterde iki farklı seviye var ve karışmamaları önemli:

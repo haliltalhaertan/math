@@ -72,12 +72,17 @@ kritik olmanın marjinal değeri düşük.
 
 > *"Bir survivor varsa kritik site yoğunluğu en az `ρ_min(κ)` olmalıdır."*
 
-| `κ` | gereken `h` | **`ρ_min`** | optimal `(ρ₁*, ρ₂*)` |
+| `κ` | benim (41×41 grid) | **arşivin sertifikalı aralığı (V3)** | sapma |
 |---|---|---|---|
-| 1,06 | 1,4952 | **0,3514** | (0,249 , 0,102) |
-| 1,5 | 1,0566 | **0,0976** | (0,083 , 0,015) |
-| 2,0 | 0,7925 | **0,0354** | (0,021 , 0,015) |
-| ≥ 2,784 | ≤ 0,5693 | **0** | zero-critical yeterli |
+| 1,06 | 0,3514 | **[0,34622623706156036 , 0,34622623706159286]** | %1,5 |
+| 1,5 | 0,0976 | **[0,09160833016625313 , 0,09160833016627168]** | %6,5 |
+| 2,0 | 0,0354 | **[0,03144455087148001 , 0,03144455087149200]** | %12 |
+| ≥ 2,784 | 0 | **0** — zero-critical yeterli | — |
+
+Benim değerlerim sistematik olarak **üstten** sapıyor; kaba gridin
+beklenen davranışı. Arşivin V3 sertifikası yönlü aralık aritmetiğiyle
+üretilmiş ve SHA-256 ile doğrulanmış. **Mertebe ve yapı doğru, hassasiyet
+onlarınki.**
 
 Eğri monoton: `κ` düştükçe gereken kritik yoğunluk hızla artıyor.
 
@@ -110,14 +115,23 @@ alıyor**:
 | `ρ = 0` | 0,5693 | **2,7840** | Task 7 + güçlendirme |
 | `ρ = optimal` | 1,5040 | **1,0538** | CP19 T4 (`κ₀ = 1,0527`) |
 
-**Ve tam eşit olmaması anlamlı:** Task 8A hâlâ Sturmian faz yapısını
-(`g` kelimesi) kısıt olarak taşıyor; CP19 T4 yalnızca ortalama kısıtı
-kullanıyor. Sturmian yapı küçük bir ek entropi kaybı yaratıyor —
-dolayısıyla Task 8A eşiği (`1,0538`) CP19 T4'ünkinden (`1,0527`)
-**bir parça daha güçlü**.
-
-İki bağımsız yöntem, %0,1 içinde aynı sayı, ve fark yapısal olarak
-açıklanabiliyor. Bu güçlü bir tutarlılık kanıtı.
+> ## ⛔ DÜZELTME (2026-08-26, Drive freeze sonrası)
+>
+> Bu farkı "Sturmian faz kısıtının entropi maliyeti" diye yorumlamıştım
+> ve Task 8A promptuna ispat maddesi koymuştum. **Yanlıştı.**
+>
+> Dondurulan `CP20_TASK8A_FINAL_FREEZE_DECISION`:
+>
+> > *"Maximizing h over F recovers CP19 Task 4 **exactly**; there is
+> > **no strict optimized Sturmian phase cost**."*
+>
+> Fark benim 41×41 grid çözünürlüğümün artefaktıydı. Ayrıca feasible
+> domain'de hesaba katmadığım bir kısıt var: **`ρ₁ − ρ₂ ≥ 3 − 2α`**.
+> Doğru optimizasyon CP19 T4'ü **tam olarak** geri veriyor.
+>
+> Yani Task 8A, CP19 T4'ten "bir parça daha güçlü" **değil** — o noktada
+> onunla **özdeş**. Yüzeyin değeri başka yerde: `ρ = 0` ile `ρ = optimal`
+> arasındaki **tüm ara rejimi** parametrize etmesi.
 
 ---
 
@@ -132,14 +146,16 @@ açıklanabiliyor. Bu güçlü bir tutarlılık kanıtı.
 
 Survivor'ın taşıdığı kritik yoğunluk, gerekenden **üç mertebe** düşük.
 
-> **CP19 T5 survivor'ı bu yüzey doğruysa dışlanır.**
-
-Bu, geriye dönük taramada bıraktığım açık maddeyi kapatıyor — ve
-oradaki kaba tahminimden (tek parametreli `ε` modeli) çok daha net.
-
-⚠️ Ölçüm uyarısı: survivor'ın "turnover density" tanımının benim `ρ`
-tanımımla birebir aynı olduğunu doğrulamadım. Ama 2.400 kat fark,
-makul bir tanım farkının kapatabileceğinden çok büyük.
+> ## ⛔ DÜZELTME — SURVIVOR DIŞLANMIYOR
+>
+> Arşivin dondurduğu karar: `[CP19 TASK5 SURVIVOR NOT EXCLUDED —
+> HYPOTHESIS MISMATCH]`. Survivor'ın **logaritmik excursion çekirdekleri**
+> global kritik-log yasasını ihlal ediyor; yani Task 8A'nın hipotezi ona
+> hiç uygulanmıyor.
+>
+> Yoğunluk karşılaştırması (0,000145 vs ~0,346) doğru, ama ondan
+> "dışlanır" sonucunu çıkarmak yanlıştı — hipotez uyumunu kontrol
+> etmemiştim.
 
 ---
 

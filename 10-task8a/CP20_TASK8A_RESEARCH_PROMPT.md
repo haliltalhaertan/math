@@ -106,11 +106,14 @@ alpha/kappa  <=  h(rho_1,rho_2)
 3. **Prove or refute the asymmetry structurally.** The computation shows
    `rho_1` is the cheaper escape direction. Give the reason in the
    generating function, not only numerically.
-4. **Explain the gap to CP19 T4.** `max h = 1.503981` versus
-   `h(alpha) = 1.505644`. The conjecture is that the difference is
-   exactly the entropy cost of the Sturmian phase constraint, which
-   CP19 T4 does not impose. Prove this or find the real cause.
-   If proved, Task 8A **strictly strengthens** CP19 T4 on this class.
+4. ~~**Explain the gap to CP19 T4.**~~ **RESOLVED — no gap.** The
+   frozen V3 establishes that maximizing `h` over the feasible domain `F`
+   (including the constraint `rho_1 - rho_2 >= 3 - 2*alpha`) recovers
+   CP19 Task 4 **exactly**; there is no strict optimized Sturmian phase
+   cost. The apparent `0.0017` difference was a grid artefact in the
+   preliminary computation. Task 8A does **not** strengthen CP19 T4 at
+   that point — it coincides with it, and its value lies in
+   parametrizing the whole intermediate regime.
 5. **Rigorous certificate.** Reproduce `h(0,0)`, `max h` and at least
    three points of `rho_min(kappa)` in rational/interval arithmetic.
    No decimal may carry a proof-critical sign decision (CP17 standard).

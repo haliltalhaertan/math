@@ -93,8 +93,9 @@ limsup_{r->infinity} log_2 p_a(r) / r  <=  h_B.
    `s_{u+r} - s_u = kappa log_2((u+r)/u) + O(1)`, hence bounded in absolute
    value by `kappa log_2(r+1) + C = O(log r)`, uniformly in `u`.
 
-2. **Chernoff.** With positive-coefficient generating function `P(t)`,
-   `N(r,S) t^{-S} <= P(t)` for every `t>0`, so `N(r,S) <= P(t) t^{S}`.
+2. **Chernoff.** With positive-coefficient generating function
+   `P(t) = sum_S N(S) t^S` having nonnegative coefficients,
+   `N(S) t^S <= P(t)` for every `t>0`, hence `N(S) <= P(t) t^{-S}`.
    A band `|S| = O(log r)` contributes `exp(lambda * O(log r)) = poly(r)`,
    which vanishes after dividing `log_2(.)` by `r`.
 
